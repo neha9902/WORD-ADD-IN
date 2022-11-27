@@ -77,17 +77,21 @@ async function extractInsights() {
           // console.log(typeof key)
           // console.log(typeof value)
           docBody.insertParagraph(
-            key+":-  "+value,
+            key+":-",
+            "End"
+          );
+          docBody.insertParagraph(
+            value,
             "End"
           );
           const k = docBody.search(key, { matchCase: true, matchWholeWord: true })
           k.load('font');
           await context.sync();
           // console.log(k.text)
-          k.items[0].font.color = 'purple';
+          // k.items[0].font.color = 'black';
           // k.items[0].font.highlightColor = '#FFFF00'; //Yellow
           k.items[0].font.bold = true;
-          k.items[0].font.size = 18;
+          k.items[0].font.size = 14;
       }
   }
     // docBody.insertParagraph(
